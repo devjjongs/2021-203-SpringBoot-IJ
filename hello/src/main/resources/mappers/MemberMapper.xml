@@ -11,7 +11,7 @@
 
     <!--  insert member  -->
     <insert id="insertMember" parameterType="member">
-        INSERT INTO MEMBER VALUES (#{userId}, #{userPw}, #{userName} #{email}, #{age})
+        INSERT INTO MEMBER VALUES (#{userId}, #{userPw}, #{userName}, #{email}, #{age})
     </insert>
 
 </mapper>
