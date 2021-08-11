@@ -6,6 +6,15 @@ public class Member {
     private String userName;
     private String email;
     private int age;
+    private boolean active;
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
 
     public Member() {
         // TODO Auto-generated constructor stub

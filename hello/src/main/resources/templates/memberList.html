@@ -1,10 +1,36 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="UTF-8">
-<title>member list</title>
+    <meta charset="UTF-8">
+    <title>member list</title>
 </head>
 <body>
-[[${memberList}]]<br>
+    <!--[[${memberList}]]<br>-->
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th colspan="6">활동멤버목록</th>
+            </tr>
+            <tr>
+                <th>아이디</th>
+                <th>비밀번호</th>
+                <th>이름</th>
+                <th>이메일</th>
+                <th>나이</th>
+                <th>활동상태</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="member : memberList">
+                <td th:text="${member.userId}">아이디</td>
+                <td th:text="${member.userPw}">비밀번호</td>
+                <td th:text="${member.userName}">이름</td>
+                <td th:text="${member.email}">이메일</td>
+                <td th:text="${member.age}">나이</td>
+                <td th:text="${member.active}">활동상태</td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 </html>

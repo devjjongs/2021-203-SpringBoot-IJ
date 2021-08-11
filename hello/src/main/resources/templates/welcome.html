@@ -1,10 +1,18 @@
 <!DOCTYPE html>
-<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
 <title>welcome</title>
 </head>
 <body>
+
+	<input type="checkbox" name="active" th:checked="${member.active}"/> 멤버활성화 <br>
+
+	|The name is ${member.userName}|<br>
+	<p th:text="${member.userName}"></p>
+
+	[[ The name is ${member.userName}]]<br>
+
 	환영
 	<p th:text="#{home.welcome}">xxxx</p>
 	환영
