@@ -27,5 +27,26 @@
 
     long a =121212121;
     int b = (int) a;
+
+    <br> th:if 사용 <br>
+    [[${member.isActive()}]]<br>
+    <div th:if="${member.isActive()} == true">
+        <input type="text">
+    </div>
+    <div th:if="true">
+        <input type="text">
+    </div>
+    <div th:if="flase">
+        asdasfsdfa
+        <input type="text">
+    </div>
+    <br>
+    <div th:if="${member.isActive()}==false">
+        <input type="text">
+    </div>
+    <br>
+    <div th:if="${!member.isActive()}">
+        <input type="text">
+    </div>
 </body>
 </html>
