@@ -1,14 +1,31 @@
 <!DOCTYPE html>
-<html  xmlns:th="http://www.thymeleaf.org">
-  <head>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
     <meta charset="UTF-8">
     <title>index</title>
-  </head>
-  <body>
-    환영 <p  th:text="#{home.welcome}"></p>
-   
-   
-	  
-	  
-  </body>
+</head>
+<body>
+    환영 <p th:text="#{home.welcome}"></p>
+
+    ${#messages.msg('home.welcome')} => [[${#messages.msg('home.welcome')}]]<br>
+    =======================================환영 <p th:text="#{home.welcome}"></p>
+
+    == [[${locale}]] ==<br>
+    == [[${#locale}]] ==<br>
+    == [[${#ctx.locale}]] ==<br>
+
+    ${session.isEmpty()} = [[${session.isEmpty()}]]<br>
+
+    ${#request.getAttribute('foo')} ==[[${#request.getAttribute('foo')}]] <br>
+    ${foo} == [[${foo}]]<br>
+
+
+    ${   } attribute에 add 되어 있는 객체체<br>
+    #{   } 메세지의 키<br>
+    @{   } 경로<br>
+    ${#  } 내장명령어<br>
+
+    long a =121212121;
+    int b = (int) a;
+</body>
 </html>
