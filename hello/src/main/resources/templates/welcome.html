@@ -1,39 +1,44 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-<meta charset="UTF-8">
-<title>welcome</title>
-</head>
-<body>
-
-	<input type="checkbox" name="active" th:checked="${member.active}"/> 멤버활성화 <br>
-
-	|The name is ${member.userName}|<br>
-	<p th:text="${member.userName}"></p>
-
-	[[ The name is ${member.userName}]]<br>
-
-	환영
-	<p th:text="#{home.welcome}">xxxx</p>
-	환영
-	<p th:text="${userId}">xxxx</p>
-	<p th:text="${member}"></p>
-	<p data-th-text="#{home.welcome}">Welcome to our grocery store!</p>
-
-	<div th:object="${member}">
-		<p>	Name : <span th:text="*{userName}"></span>님</p>
-		<P> email : <span th:text="*{email}"></span>확인</P>
-		<p> age : <span th:text="*{age}"></span>세 입니다.</p>
-	</div>
-	<div>
-		<p>	Name : <span th:text="${member.userName}"></span>님</p>
-		<P> email : <span th:text="${member.email}"></span>확인</P>
-		<p> age : <span th:text="${member.age}"></span>세 입니다.</p>
-	</div>
-	
-	<a href="memberList">memberList의 링크</a>
-	
-	<a href="memberList" th:href="@{/memberList}">memberList의 링크</a>
-	<a th:href="@{/memberList}">memberList의 링크</a>
-</body>
+<html  xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8">
+    <title>welcome</title>
+  </head>
+  <body>
+  
+  <input type="checkbox" name="active" th:checked="${member.active}" /> 멤버활성화 <br>
+  
+  
+  
+   |The name is ${member.userName}|  <br>
+   <p  th:text="${member.userName}"></p>
+   
+  [[${member.userName}  ]] <br>
+  
+    환영 <p th:text="#{home.welcome}">xxxx</p>
+    환영 <p th:text="${userId}">xxxx</p>
+      <p  th:text="${member}"></p>
+      <p data-th-text="#{home.welcome}">Welcome to our grocery store!</p> 
+      
+      <div th:object="${member}">
+	    <p>Name: <span th:text="*{userName}"></span>님.</p>
+	    <p>email: <span th:text="*{email}"></span>확인.</p>
+	    <p>age: <span th:text="*{age}"></span>세입니다.</p>
+	  </div>
+	   <div >
+	    <p>Name: <span th:text="${member.userName}"></span>님.</p>
+	    <p>email: <span th:text="${member.email}"></span>확인.</p>
+	    <p>age: <span th:text="${member.age}"></span>세입니다.</p>
+	  </div>
+	  
+	 
+	  <a href="memberList"> memberList의링크</a>
+	  
+	   <a href="memberList" th:href="@{/memberList}"> memberList의링크</a>
+	   <a  th:href="@{/memberList}"> memberList의링크</a>
+	  
+	  
+	  
+	  
+  </body>
 </html>
