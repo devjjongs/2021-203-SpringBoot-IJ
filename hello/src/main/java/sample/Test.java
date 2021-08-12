@@ -5,16 +5,25 @@ import java.util.Date;
 public class Test {
 
     public static void main(String[] args) {
+        // TODO Auto-generated method stub
         String str1 = "1234";
-        //int a = (int)str1; // 불가
+        //int a = (int)str1;
         int a = Integer.parseInt(str1);
-        int b = Integer.valueOf(str1); //boxing
-        int c = b; //unboxing
+        Integer b = Integer.valueOf(str1);
+        int c = b;
 
-        Integer d = 4; //autoboxing // 원래는 new Integer(4); 로 작성 해야하지만 버전이 높아지면서 허용
+        long l = 67;
+        int ss = (int) l;
+        boolean bb = true;
+//        int sss = bb;
+        int ttt = 789789;
+        Integer d = 4; // new Integer(4);
 
         Date date;
 
+        String yyy = String.valueOf(ttt);
+        yyy = ttt + "";
 
     }
+
 }
