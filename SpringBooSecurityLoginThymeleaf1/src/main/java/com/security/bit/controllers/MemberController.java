@@ -49,5 +49,4 @@ public class MemberController {
         memberRepository.save(memberForm);
         return "redirect:/login";
     }
-
 }
