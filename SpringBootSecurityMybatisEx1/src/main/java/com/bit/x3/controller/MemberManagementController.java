@@ -4,6 +4,8 @@ package com.bit.x3.controller;
 import com.bit.x3.model.vo.Member;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,9 +15,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class MemberManagementController {
     private static final Logger log = LoggerFactory.getLogger(MemberManagementController.class);
 
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
     //index
     @GetMapping("/")
     public String index() {
+
         return "/index";
     }
 
@@ -35,9 +41,12 @@ public class MemberManagementController {
     //회원가입 데이터 저장
     @PostMapping("/memberNew")
     public String memberNew(Member member) {
+        log.info(member.toString());
 //		암호에 대해서 암호화시킨다
-//        dao 의 insert 담당하는 메소드 호출
-//        결과를 받아서
+        member.setUserPw(passwordEncoder.encode(member.getUserPw()));
+        log.info("암호화된 암호: " + member.getUserPw());
+//      dao 의 insert 담당하는 메소드 호출
+//      결과를 받아서
         log.info("/memberNew() return 전");
         return "redirect:/login";
     }
