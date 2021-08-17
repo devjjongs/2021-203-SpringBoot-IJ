@@ -7,7 +7,9 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
 
+@Service
 public class MemberUserDetailsServiceImpl implements UserDetailsService {
 
     @Autowired
@@ -17,9 +19,11 @@ public class MemberUserDetailsServiceImpl implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         System.out.println("MemberUserDetailsServiceImpl username: " + username);
         Member member = memberDao.findMember(username);
+        System.out.println("loadUserByUsername member :" + member);
+        User user = null;
         if (member != null) {
-            User
+            user = new User(member.getUserId(), member.getUserPw(), null);
         }
-        return null;
+        return user;
     }
 }
