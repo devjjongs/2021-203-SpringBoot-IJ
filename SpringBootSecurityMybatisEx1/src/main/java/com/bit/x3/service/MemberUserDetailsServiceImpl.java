@@ -9,23 +9,25 @@ import org.springframework.stereotype.Service;
 
 import com.bit.x3.model.dao.MemberDao;
 import com.bit.x3.model.vo.Member;
+
 @Service
 public class MemberUserDetailsServiceImpl implements UserDetailsService {
-	@Autowired
-	private MemberDao memberDao;
-	@Override
-	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		// TODO Auto-generated method stub
-		System.out.println("MemberUserDetailsServiceImpl  username:"+username);
-		Member member = memberDao.findMember(username);
-		System.out.println("loadUserByUsername member : " + member); 
-		User user = null;
-		if(member!=null) {
-			user = new User(member.getUserId(), member.getUserPw(), null);
-		}
-		
-		return user;
-	}
+
+    @Autowired
+    private MemberDao memberDao;
+
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        // TODO Auto-generated method stub
+        System.out.println("MemberUserDetailsServiceImpl  username:" + username);
+        Member member = memberDao.findMember(username);
+        System.out.println("loadUserByUsername member : " + member);
+        User user = null;
+        if (member != null) {
+            user = new User(member.getUserId(), member.getUserPw(), null);
+        }
+        return user;
+    }
 
 }
 

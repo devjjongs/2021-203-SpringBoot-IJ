@@ -2,8 +2,8 @@ package com.bit.x3.model.vo;
 
 import lombok.Data;
 
-@Data
 
+@Data
 public class Member {
 	private String userId;
 	private String userPw;
@@ -11,6 +11,4 @@ public class Member {
 	private String email;
 	private int age;
 	private boolean isActive;
-	
-	
 }
