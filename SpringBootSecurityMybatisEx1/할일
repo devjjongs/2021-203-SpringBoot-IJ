@@ -11,4 +11,15 @@
 	        결과를 받아서 
 	        /login 부분으로 이동한다
        
-      
+/////////////////////////////////////
+로그인부분 처리
+        redirect:/login
+                @RequestMapping("/login") => /SpringBootSecurity
+                public void memberLogin() {}
+
+                <form action="/login" method="post">
+                post 이면서 /login인 것이 없는 상태
+                => UserDetailsService 를 구현시킨 클래스가 필요
+                    => userName이 받은 것을 확인
+                    => 권한에 맞게 role을 지정
+                    => 
