@@ -42,7 +42,21 @@ public class CoinUse {
         System.out.printf("USACoinService 인터페이스 사용 : %d , %s \n", coin, coinStr);
 
         USACoin usaCoin = USACoin.NICKLE;
-        System.out.println(usaCoin.PENNY.ordinal()+ " " + usaCoin);
 
+        System.out.println(usaCoin.PENNY.ordinal() + " : " + usaCoin);
+
+        for (USACoin value : USACoin.values()) {
+            System.out.println(value);
+            String str = value.name();
+            System.out.println("value.name() : " + str);
+            System.out.println(value.compareTo(usaCoin));
+        }
+
+        System.out.println("---------------------------");
+        USACoin2 usaCoin2 = USACoin2.NICKLE;
+
+        System.out.println(usaCoin2);
+        System.out.println(usaCoin2.name());
+        System.out.println(usaCoin2.getValue());
     }//main() end
 }
