@@ -8,6 +8,11 @@
 	<select id="getMember" resultType="Member">
   		select *  from  member  where  userId =#{userId} and userPw = #{userPw} 
   	</select>
+
+<!--	Member FindMember(@Param("userId") String userId);-->
+	<select id="getMember" resultType="Member">
+		select *  from  member  where  userId =#{userId}
+	</select>
 	
 	<insert id="insertMember" parameterType="Member">
   		INSERT INTO MEMBER VALUES(#{userId}, #{userPw}, #{userName}, #{email}, #{age},'t')
