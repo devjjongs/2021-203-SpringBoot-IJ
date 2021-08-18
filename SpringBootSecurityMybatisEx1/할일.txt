@@ -28,7 +28,32 @@
             user에 대입
            ==> 암호도 암호화를 시킨다
      
-     
+/////////////////////////////
+=====> WebSecurityConfigurerAdaptor로 부터 파생된 클래스로 config에서 구현
+로그인 성공여부
+    성공
+        호출 : /loginSuccess
+        어디서 : loginSuccess.html
+        무엇을 : User 인스턴스에서 롤을 받고
+
+        어떻게 : 권한에 따른 접속할 수 있는 페이지로 이동
+                어드민 admin/main
+                멤버 member/main
+        처리 하고
+        결과를 어디서 : loginSuccess.html
+        보여줄 것인가
+    실패
+        호출 : /loginFail
+        어디서 : MemberManagementController의 loginFail()
+        처리 하고
+        결과를 어디서 : loginFail.html
+        보여줄 것인가
+
+/////////////////////////////
+로그아웃
+    지금까지 클라이언트가 사용하던 자원 정리
+    세션을 만료시킨다
+    실행하게 되면 어디로 가야될까 -- 로그인 , 메인 , ~~~~~~
      
      
      
