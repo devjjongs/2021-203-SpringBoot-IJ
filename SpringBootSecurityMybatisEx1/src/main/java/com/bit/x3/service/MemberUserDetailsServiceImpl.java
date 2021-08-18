@@ -40,7 +40,7 @@ public class MemberUserDetailsServiceImpl implements UserDetailsService {
 //			}
 			
 			
-//			String role = username.equals("bit203") ? MemberRole.ADMIN.getValue() : MemberRole.MEMBER.getValue() ;
+			String role = username.equals("bit203") ? MemberRole.ADMIN.getValue() : MemberRole.MEMBER.getValue() ;
 			// grantedAuthorities.add(new SimpleGrantedAuthority(role);
 			
 			grantedAuthorities.add(new SimpleGrantedAuthority(username.equals("bit203") ? MemberRole.ADMIN.getValue() : MemberRole.MEMBER.getValue()));
@@ -50,7 +50,6 @@ public class MemberUserDetailsServiceImpl implements UserDetailsService {
 		
 		return user;
 	}
-	
 }
 
 

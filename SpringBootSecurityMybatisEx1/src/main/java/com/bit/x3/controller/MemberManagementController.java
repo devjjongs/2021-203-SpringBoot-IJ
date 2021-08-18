@@ -16,6 +16,7 @@ import com.bit.x3.model.dao.MemberDao;
 import com.bit.x3.model.vo.Member;
 import com.fasterxml.jackson.annotation.JsonRawValue;
 
+import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -44,19 +45,30 @@ public class MemberManagementController {
     //로그인 성공시
     @RequestMapping("/loginSucces")
     public String loginSucces(@AuthenticationPrincipal User user, Map<String, Object> model, SecurityContextHolderAwareRequestWrapper requestWrapper) {
-//		System.out.println("loginSucces  ==>"+user);
         String nextPage = "/loginSucces";
         if (user == null) {
             model.put("message", "유효하지 않은 데이터");
             nextPage = "/denied";  //  user가 null일 경우 main으로 이동
         } else {
             if (requestWrapper.isUserInRole("ADMIN")) { //ADMIN인지 확인
-                nextPage = "/admin/main";
+                nextPage = "redirect:/admin/main";
             } else {
+                model.put("currentMemberId", user.getUsername());
                 nextPage = "/member/main";
             }
         }
         return nextPage;
+    }
+
+    @GetMapping("/admin/main")
+    public String adminMain(@AuthenticationPrincipal User user, Map<String, Object> model, SecurityContextHolderAwareRequestWrapper requestWrapper) {
+//        System.out.println("loginSucces  ==>" + user);
+//        System.out.println("loginSucces  ==>" + requestWrapper.isUserInRole("ADMIN"));
+
+        List<Member> members = memberDao.memberList();
+        model.put("members", members);
+        model.put("currentMemberId", user.getUsername());
+        return "/admin/main";
     }
 
     //로그 아웃
