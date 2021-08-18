@@ -1,5 +1,5 @@
-package enumtest;
-
-public class NoSub extends NoInstanceNoExtends {
-
-}
+//package enumtest;
+//
+//public class NoSub extends NoInstanceNoExtends {
+//
+//}

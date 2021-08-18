@@ -38,10 +38,21 @@
 
         어떻게 : 권한에 따른 접속할 수 있는 페이지로 이동
                 어드민 admin/main
+                        ??
+                        member list
+                        로그아웃 버튼 링크
+                        home 버튼 링크
+
                 멤버 member/main
+                        ??
+                        로그인한 맴버 자신의 정보가 출력
+                        로그아웃 버튼 링크
+                        home 버튼 링크
+
         처리 하고
         결과를 어디서 : loginSuccess.html
         보여줄 것인가
+
     실패
         호출 : /loginFail
         어디서 : MemberManagementController의 loginFail()
