@@ -1,4 +1,5 @@
 package enumtest;
 
-public class NoSub {
+public class NoSub extends NoInstanceNoExtends {
+
 }

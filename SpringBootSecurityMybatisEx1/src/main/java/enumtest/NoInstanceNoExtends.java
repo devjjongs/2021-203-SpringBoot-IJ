@@ -1,7 +1,5 @@
 package enumtest;
 
-public final class NoInstanceNoExtends {
-    private NoInstanceNoExtends() {
-
-    }
+public  final class NoInstanceNoExtends {
+	private NoInstanceNoExtends( ) {}
 }

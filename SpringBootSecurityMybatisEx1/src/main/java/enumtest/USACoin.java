@@ -1,5 +1,8 @@
 package enumtest;
 
 public enum USACoin {
-    PENNY, NICKLE, DIME, QUARTER
+	PENNY ,
+	NICKLE,
+	DIME,
+	QUARTER       
 }
