@@ -7,7 +7,7 @@ public class Use5 {
 
             for (int i = 0; i <= 10; i++) {
 
-                System.out.println("No Thread class getName()" + " : " + i);
+                System.out.println("No Thread class getName()" + " : " + i + " " + Thread.currentThread().getName());
             }
         };
         Runnable target2 = new MyThreadTarget();
