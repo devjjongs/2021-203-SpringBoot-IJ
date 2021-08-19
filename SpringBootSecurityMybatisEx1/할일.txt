@@ -32,7 +32,7 @@
 =====> WebSecurityConfigurerAdaptor로 부터 파생된 클래스로 config에서 구현
 로그인 성공여부
     성공
-        호출 : /loginSuccess
+        호 출 : /loginSuccess
         어디서 : loginSuccess.html
         무엇을 : User 인스턴스에서 롤을 받고
 

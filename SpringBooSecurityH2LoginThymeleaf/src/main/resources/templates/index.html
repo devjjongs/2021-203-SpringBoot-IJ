@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
-<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <title>메인</title>
@@ -14,9 +15,9 @@
     <a sec:authorize="hasRole('ROLE_MEMBER')" th:href="@{/member/info}">내정보</a>
     <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/admin}">어드민</a>
 
-    
+
     <div sec:authorize="isAuthenticated()">
-    	User: <span sec:authentication="name"></span>님
-	</div>
+        User: <span sec:authentication="name"></span>님
+    </div>
 </body>
 </html>

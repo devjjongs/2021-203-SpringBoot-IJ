@@ -15,42 +15,51 @@ import org.springframework.stereotype.Service;
 import com.bit.x3.model.dao.MemberDao;
 import com.bit.x3.model.util.MemberRole;
 import com.bit.x3.model.vo.Member;
+
 @Service
 public class MemberUserDetailsServiceImpl implements UserDetailsService {
-	@Autowired
-	private MemberDao memberDao;
-	@Override
-	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		// TODO Auto-generated method stub
-		System.out.println("MemberUserDetailsServiceImpl  username:"+username);
-		Member member = memberDao.findMember(username);
-		System.out.println("loadUserByUsername member : " + member); 
-		
-		// 인가를 위한 권한 설정
-		
-		
-		User user = null;
-		if(member!=null) {
-			
-			Set<GrantedAuthority> grantedAuthorities = new HashSet<>(2);
+    @Autowired
+    private MemberDao memberDao;
+
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        // TODO Auto-generated method stub
+        System.out.println("MemberUserDetailsServiceImpl  username:" + username);
+        Member member = memberDao.findMember(username);
+        System.out.println("loadUserByUsername member : " + member);
+
+        // 인가를 위한 권한 설정
+
+
+        User user = null;
+        if (member != null) {
+
+            Set<GrantedAuthority> grantedAuthorities = new HashSet<>(2);
 //			if(username.equals("bit203")) {
 //				grantedAuthorities.add(new SimpleGrantedAuthority(MemberRole.ADMIN.getValue()));
 //			}else {
 //				grantedAuthorities.add(new SimpleGrantedAuthority(MemberRole.MEMBER.getValue()));
 //			}
-			
-			
+
+
 //			String role = username.equals("bit203") ? MemberRole.ADMIN.getValue() : MemberRole.MEMBER.getValue() ;
-			// grantedAuthorities.add(new SimpleGrantedAuthority(role);
-			
-			grantedAuthorities.add(new SimpleGrantedAuthority(username.equals("bit203") ? MemberRole.ADMIN.getValue() : MemberRole.MEMBER.getValue()));
-			user = new User(member.getUserId(), member.getUserPw(), grantedAuthorities);
-			System.out.println("user "+ user);
-		}
-		
-		return user;
-	}
-	
+            // grantedAuthorities.add(new SimpleGrantedAuthority(role);
+
+//            grantedAuthorities.add(new SimpleGrantedAuthority(
+//                    username.equals("bit203") ? MemberRole.ADMIN.getValue() : MemberRole.MEMBER.getValue()));
+            // userName이 bit203과 equals 인지 확인
+
+            grantedAuthorities.add(new SimpleGrantedAuthority(
+                    member.isAdmin() ? MemberRole.ADMIN.getValue() : MemberRole.MEMBER.getValue()));
+            //isAdmin이 어드민인지 확인 한 후 권한 부여
+
+            user = new User(member.getUserId(), member.getUserPw(), grantedAuthorities);
+            System.out.println("user " + user);
+        }
+
+        return user;
+    }
+
 }
 
 
