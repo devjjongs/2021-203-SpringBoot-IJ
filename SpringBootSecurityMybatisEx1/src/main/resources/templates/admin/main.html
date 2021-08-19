@@ -1,21 +1,22 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
     <meta charset="UTF-8">
     <title>admin main</title>
-</head>
-<body>
-    <th:block th:if="${message ==null}">
-        <h1>Current Member Id</h1>
-        <p th:text="${currentMemberId}"></p>
-        <h1>Members</h1>
-        <table>
-            <tr th:each="member : ${members}">
-                <td th:text="${member.userId()}"></td>
-                <td th:text="${member.userName()}"></td>
-                <td th:text="${member.email()}"></td>
-            </tr>
-        </table>
-    </th:block>
-</body>
+  </head>
+  <body>
+  <th:block th:if="${message ==null}">
+	<h1>Current Member Id</h1>
+	<p th:text="${currentMemberId}"></p>
+	<h1>Members</h1>
+	<table>
+	    <tr th:each="member : ${members}">
+	        <td th:text="${member.userId}"></td>
+	        <td th:text="${member.userName}"></td>
+	        <td th:text="${member.email}"></td>
+	    </tr>
+	</table>
+</th:block>
+    
+  </body>
 </html>
