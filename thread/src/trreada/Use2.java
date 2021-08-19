@@ -1,12 +1,14 @@
 package trreada;
 
-public class Use {
+public class Use2 {
     public static void main(String[] args) {
         System.out.println(1);
-        Thread thread = new MyThread();
+        Thread thread = new MyThread2("th1");
+        Thread thread2 = new MyThread2("th2");
+
         System.out.println(2);
 
-//        thread.run();
+        thread2.start();
         thread.start();
         System.out.println(3);
         System.out.println(Thread.currentThread().getName());   // main
