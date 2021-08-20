@@ -70,7 +70,7 @@ public class MemberManagementController {
 //		System.out.println("loginSucces  ==>"+user);
 //		System.out.println("loginSucces  ==>"+requestWrapper.isUserInRole("ADMIN"));
 
-        List<Member> members = memberDao.memberList(); // Dao를 통해 멤버리스트를 받음
+        List<Member> members = memberDao.memberListWhere(-1, "@");    //memberDao.memberList(); // Dao를 통해 멤버리스트를 받음
         model.put("members", members);
         model.put("currentAdminId", user.getUsername());
         return "/admin/main";
