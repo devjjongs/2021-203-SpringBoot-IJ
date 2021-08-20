@@ -17,7 +17,6 @@ public class NoLambda {
 			// TODO Auto-generated method stub
 			return a-b;
 		}
-		
 	}
 	
 	public static void main(String[] args) {
