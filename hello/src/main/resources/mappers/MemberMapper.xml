@@ -1,16 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper
-  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-  
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
 <mapper namespace="com.example.hello.model.dao.MemberDao">
-	<!-- Member getMember(@Param("userId") String userId , @Param("userPw") String userPw); -->
-	<select id="getMember" resultType="com.example.hello.model.vo.Member">
-  		select *  from  member  where  userId =#{userId} and userPw = #{userPw} 
-  	</select>
-	
-	<insert id="insertMember" parameterType="Member">
-  		INSERT INTO MEMBER VALUES(#{userId}, #{userPw}, #{userName}, #{email}, #{age})
-  	</insert>
-	
+    <!-- Member getMember(@Param("userId") String userId , @Param("userPw") String userPw); -->
+    <select id="getMember" resultType="com.example.hello.model.vo.Member">
+        select *
+        from member
+        where userId = #{userId}
+          and userPw = #{userPw}
+    </select>
+
+    <!--	// 나이는 23세이고 이메일에 @ 표시가 있는 멤버 목록-->
+    <!--	// select *FROM member where age=23 and email like '%@%';-->
+    <!--	// 동적 SQL-->
+    <!--	List<Member> memberListWhere(@Param("age") int age,@Param("email") String email);-->
+    <select id="memberListWhere" resultType="Member">
+        select *FROM member
+        <where>
+            <if test="age > 0"></if>
+            age = #{age}
+            <if test="email != null"></if>
+            and email like '%'||#{email}||'%'
+        </where>
+    </select>
+
+    <!--	List<Member> memberListWhereObject(Member member);-->
+    <select id="memberListWhereObject" parameterType="Member" resultType="Member">
+        select *
+        FROM member
+    </select>
+
+    <insert id="insertMember" parameterType="Member">
+        INSERT INTO MEMBER (userId, userPw, userName, email, age, active, isAdmin)
+        VALUES (#{userId}, #{userPw}, #{userName}, #{email}, #{age}, #{active}, #{isAdmin})
+    </insert>
+
 </mapper>  

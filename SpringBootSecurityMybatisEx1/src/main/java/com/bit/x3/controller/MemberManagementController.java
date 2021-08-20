@@ -77,6 +77,8 @@ public class MemberManagementController {
     }
 
 
+
+
     @RequestMapping("/logoutSucces")
     public String logoutSucces() {
         System.out.println("logoutSucces  ==>");

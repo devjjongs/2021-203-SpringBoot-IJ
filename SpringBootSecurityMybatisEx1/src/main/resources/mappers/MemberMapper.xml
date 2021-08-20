@@ -16,7 +16,7 @@
 	
 	
 	<insert id="insertMember" parameterType="Member">
-  		INSERT INTO MEMBER VALUES(#{userId}, #{userPw}, #{userName}, #{email}, #{age}, #{active,jdbcType=CHAR})
+		INSERT INTO MEMBER  (userId, userPw, userName, email, age,active,isAdmin)     VALUES(#{userId}, #{userPw}, #{userName}, #{email}, #{age},#{active},#{isAdmin})
   		<!-- INSERT INTO "SPRING"."MEMBER" ( userid, userpw,username,email,age)  VALUES ('lee4589', '1234', 'lee ja', 'kim99@kim.co.kr', 99) --> 
   	</insert>
 	
