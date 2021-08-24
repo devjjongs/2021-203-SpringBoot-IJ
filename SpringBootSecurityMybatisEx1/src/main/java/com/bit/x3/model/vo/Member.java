@@ -12,5 +12,4 @@ public class Member {
 	private int age;
 	private boolean isActive;
 	private boolean isAdmin;
-	
 }

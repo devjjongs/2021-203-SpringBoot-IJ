@@ -1,5 +1,8 @@
 package annotation;
 
-public @interface SuperAnno {
+import java.lang.annotation.Inherited;
 
+@Inherited
+public @interface SuperAnno {
+    public String description() default "";
 }
