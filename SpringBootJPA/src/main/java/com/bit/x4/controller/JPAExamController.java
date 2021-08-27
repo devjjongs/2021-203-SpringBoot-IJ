@@ -14,23 +14,41 @@ import com.bit.x4.model.vo_dto_entity.MemberJpa;
 @Controller
 @RequestMapping("/member")
 public class JPAExamController {
-	@Autowired
-	private MemberJpaRepository dao;
-	
-	@RequestMapping("/hi")
-	@ResponseBody
-	public String hello() {
-		
-		return "Hellodvfdgdfjdfg76458043580438543~~~~~";
-	}
-	
-	@RequestMapping("/list")
-	@ResponseBody
-	public List<MemberJpa> view(){
-		List<MemberJpa> memberData = dao.findAll();
-		return memberData;
-	}
-	
+    @Autowired
+    private MemberJpaRepository dao;
+
+    @RequestMapping("/hi")
+    @ResponseBody
+    public String hello() {
+
+        return "Hellodvfdgdfjdfg76458043580438543~~~~~";
+    }
+
+    @RequestMapping("/list")
+    @ResponseBody
+    public List<MemberJpa> view() {
+        List<MemberJpa> memberData = dao.findAll();
+        return memberData;
+    }
+
+    @RequestMapping("/idInput")
+    public String idInput() {
+        return "idInput";
+    }
+
+    // http://localhost:9089/member/test1?memberId=1234
+    @RequestMapping("/test1")
+    @ResponseBody
+    public String test1(int memberId) {
+        return "memberId=" + memberId;
+    }
+
+    // http://localhost:9089/member/test2/1234
+    @RequestMapping("/test2/{memberId}")
+    @ResponseBody
+    public String test2(@PathVariable int memberId) {
+        return "";
+    }
 }
 
 
