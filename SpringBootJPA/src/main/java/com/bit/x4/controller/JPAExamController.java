@@ -14,46 +14,45 @@ import com.bit.x4.model.vo_dto_entity.MemberJpa;
 @Controller
 @RequestMapping("/member")
 public class JPAExamController {
-    @Autowired
-    private MemberJpaRepository dao;
+	@Autowired
+	private MemberJpaRepository dao;
 
-    @RequestMapping("/hi")
-    @ResponseBody
-    public String hello() {
+	@RequestMapping("/hi")
+	@ResponseBody
+	public String hello() {
 
-        return "Hellodvfdgdfjdfg76458043580438543~~~~~";
-    }
+		return "Hellodvfdgdfjdfg76458043580438543~~~~~";
+	}
 
-    @RequestMapping("/list")
-    @ResponseBody
-    public List<MemberJpa> view() {
-        List<MemberJpa> memberData = dao.findAll();
-        return memberData;
-    }
+	@RequestMapping("/list")
+	@ResponseBody
+	public List<MemberJpa> view() {
+		List<MemberJpa> memberData = dao.findAll();
+		return memberData;
+	}
 
-    @RequestMapping("/idInput")
-    public String idInput() {
-        return "idInput";
-    }
+	@RequestMapping("/idInput")
+	public String idInput() {
 
-    // http://localhost:9089/member/test1?memberId=1234
-    @RequestMapping("/test1")
-    @ResponseBody
-    public String test1(int memberId) {
-        return "memberId=" + memberId;
-    }
+		return "idInput";
+	}
+	
+	
+	
+	// http://localhost:9089/member/test1?memberId=1234
+	@RequestMapping("/test1")
+	@ResponseBody
+	public String test1(int memberId) {
 
-    // http://localhost:9089/member/test2/1234
-    @RequestMapping("/test2/{memberId}")
-    @ResponseBody
-    public String test2(@PathVariable int memberId) {
-        return "";
-    }
+		return "memberId=" + memberId;
+	}
+
+	// http://localhost:9089/member/test2/1234
+	@RequestMapping("/test2/{memberId}")
+	@ResponseBody
+	public String test2(@PathVariable int memberId) {
+
+		return "memberId=" + memberId;
+	}
+
 }
-
-
-
-
-
-
-

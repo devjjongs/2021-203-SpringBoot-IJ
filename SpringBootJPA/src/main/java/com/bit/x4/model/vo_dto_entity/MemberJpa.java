@@ -1,5 +1,7 @@
 package com.bit.x4.model.vo_dto_entity;
 
+
+
 import java.sql.Timestamp;
 
 import javax.persistence.Column;
