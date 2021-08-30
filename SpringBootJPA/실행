@@ -1,0 +1,7 @@
+http://localhost:9089/member/add?memberId=1234&password=1234&email=lee
+http://localhost:9089/member/add?memberId=1234&password=1234&email=lee
+
+
+pdf2 ==>
+    시퀀스 만들기
+    테이블
