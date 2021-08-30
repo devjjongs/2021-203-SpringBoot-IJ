@@ -56,12 +56,12 @@ public class JPAExamController {
     }
 
     @ResponseBody
-    @GetMapping("/add")
+    @GetMapping("/add") //http://localhost:9089/member/add?memberId=12344&email=lee@hh.tt&password=1234
     public MemberJpa add(MemberJpa entity) {
         return dao.save(entity);
     }
 
-    @RequestMapping("/del/{id}")
+    @RequestMapping("/del/{id}") //http://localhost:9089/member/del
     public String delete(@PathVariable int id) {
         System.out.println("id=" + id);
         dao.deleteById(id);

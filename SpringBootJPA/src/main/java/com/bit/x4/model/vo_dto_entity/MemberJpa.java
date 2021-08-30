@@ -6,6 +6,7 @@ import java.sql.Timestamp;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 import org.hibernate.annotations.CreationTimestamp;
@@ -17,6 +18,7 @@ import lombok.Data;
 @Data
 public class MemberJpa {
 	@Id
+	@GeneratedValue
 	private int memberId;
 	private String email;
 	private String password;
