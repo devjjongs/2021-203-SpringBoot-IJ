@@ -1,0 +1,38 @@
+server:
+  port: 9089
+
+#JDBC Oracle Connection
+spring:
+  datasource:
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@localhost:1521:xe
+    username: spring
+    password: 1234
+    data: classpath:sql/data.sql
+    initialization-mode: always
+    initialize:true
+
+  # JPA
+
+  jpa:
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: create
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
+    properties:
+      hibernate:
+        format_sql: true
+        use_sql_comments: true
+
+  sql:
+    init:
+
+
+logging:
+  level:
+    '[org.hibernate.type.descriptor.sql]': trace 
+

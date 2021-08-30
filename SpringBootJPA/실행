@@ -2,6 +2,15 @@ http://localhost:9089/member/add?memberId=1234&password=1234&email=lee
 http://localhost:9089/member/add?memberId=1234&password=1234&email=lee
 
 
+
 pdf2 ==>
+sql 파일을 만들어 놓고 (테이블 생성,...)==> sql/schema.sql
+sql 파일을 만들어 놓고 (데이터 isnert,...)==> sql/data.sql
+
     시퀀스 만들기
     테이블
+
+
+
+
+PL/SQL
