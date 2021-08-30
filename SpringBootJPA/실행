@@ -1,16 +1,15 @@
-http://localhost:9089/member/add?memberId=1234&password=1234&email=lee
-http://localhost:9089/member/add?memberId=1234&password=1234&email=lee
+http://localhost:9089/member/add?memberId=1234&password=12341&email=lee
+http://localhost:9089/member/add?memberId=1234&password=12341&email=lee
 
 
 
 pdf2 ==>
-sql 파일을 만들어 놓고 (테이블 생성,...)==> sql/schema.sql
-sql 파일을 만들어 놓고 (데이터 isnert,...)==> sql/data.sql
-
-    시퀀스 만들기
-    테이블
-
-
-
-
-PL/SQL
+sql 파일을 만들어 놓고 (테이블 생성 ,...)==>  sql/schema.sql
+sql 파일을 만들어 놓고 (데이터 insert)==>  sql/data.sql
+ 시퀀스 만들어
+ 테이블
+ ==> 환경설정 ~.SQL 파일을 읽어 들여서 처리
+ 
+ 
+ 
+ PL/SQL 

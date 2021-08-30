@@ -1,26 +1,29 @@
-create TABLE member2
-(
-    memberId number primary key not null,
-    name     varchar(50)
-)
 
-create TABLE phone
-(
-    seq      number primary key not null,
-    memberId number,
-    phoneNo  varchar2(50).CONSTRAINT "SPRING"
-)
+CREATE TABLE member2 (
+   memberId  number primary key not null ,
+   name varchar(50) 
+);
 
-
-create SEQUENCE "SPRING"."MEMBER2_SEQ"
-    minvalue 1
-    maxvalue 99999
-    increment by 1
-    start with 1
-;
-create SEQUENCE "SPRING"."PHONE_SEQ"
-    minvalue 1
-    maxvalue 99999
-    increment by 1
-    start with 1
-;
+CREATE TABLE phone (
+   SEQ  number primary key not null ,
+   MEMBERID number,
+   PHONENO varchar2(50),
+   CONSTRAINT "PHONE_FK1" FOREIGN KEY ("MEMBERID")
+	  REFERENCES "SPRING"."MEMBER2" ("MEMBERID") ON DELETE CASCADE
+      
+);  
+     
+ CREATE SEQUENCE  "SPRING"."MEMBER2_SEQ"  
+       MINVALUE 1 
+       MAXVALUE 99999 
+       INCREMENT BY 1 
+       START WITH 1 
+       ;
+       
+  CREATE SEQUENCE  "SPRING"."PHONE_SEQ"  
+       MINVALUE 1 
+       MAXVALUE 99999 
+       INCREMENT BY 1 
+       START WITH 1 
+       ;
+    

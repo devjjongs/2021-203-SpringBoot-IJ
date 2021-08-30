@@ -15,56 +15,62 @@ import com.bit.x4.model.vo_dto_entity.MemberJpa;
 @Controller
 @RequestMapping("/member")
 public class JPAExamController {
-    @Autowired
-    private MemberJpaRepository dao;
+	@Autowired
+	private MemberJpaRepository dao;
 
-    @RequestMapping("/hi")
-    @ResponseBody
-    public String hello() {
+	@RequestMapping("/hi")
+	@ResponseBody
+	public String hello() {
 
-        return "Hellodvfdgdfjdfg76458043580438543~~~~~";
-    }
+		return "Hellodvfdgdfjdfg76458043580438543~~~~~";
+	}
 
-    @RequestMapping("/list")
-    @ResponseBody
-    public List<MemberJpa> view() {
-        List<MemberJpa> memberData = dao.findAll();
-        return memberData;
-    }
+	@RequestMapping("/list")
+	@ResponseBody
+	public List<MemberJpa> view() {
+		List<MemberJpa> memberData = dao.findAll();
+		return memberData;
+	}
 
-    @RequestMapping("/idInput")
-    public String idInput() {
+	@RequestMapping("/idInput")
+	public String idInput() {
 
-        return "idInput";
-    }
+		return "idInput";
+	}
+	
+	
+	
+	// http://localhost:9089/member/test1?memberId=1234
+	@RequestMapping("/test1")
+	@ResponseBody
+	public String test1(int memberId) {
 
+		return "memberId=" + memberId;
+	}
 
-    // http://localhost:9089/member/test1?memberId=1234
-    @RequestMapping("/test1")
-    @ResponseBody
-    public String test1(int memberId) {
+	// http://localhost:9089/member/test2/1234
+	@RequestMapping("/test2/{memberId}")
+	@ResponseBody
+	public String test2(@PathVariable int memberId) {
 
-        return "memberId=" + memberId;
-    }
+		return "memberId=" + memberId;
+	}
+	
+	
+	
+	@ResponseBody
+	@GetMapping("/add") // http://localhost:9089/member/add?memberId=12344&email=lee@hh.tt&password=1234
+	public MemberJpa add(MemberJpa entity) {
+		return dao.save(entity);
+	//	return entity;
+	}
 
-    // http://localhost:9089/member/test2/1234
-    @RequestMapping("/test2/{memberId}")
-    @ResponseBody
-    public String test2(@PathVariable int memberId) {
+	@RequestMapping("/del/{id}")//http://localhost:9089/member/del/1234
+	public String delete(@PathVariable int id) {
+		System.out.println("id=" + id);
+		dao.deleteById(id);
+		return "redirect:/member/list";
+	}
+	
 
-        return "memberId=" + memberId;
-    }
-
-    @ResponseBody
-    @GetMapping("/add") //http://localhost:9089/member/add?memberId=12344&email=lee@hh.tt&password=1234
-    public MemberJpa add(MemberJpa entity) {
-        return dao.save(entity);
-    }
-
-    @RequestMapping("/del/{id}") //http://localhost:9089/member/del
-    public String delete(@PathVariable int id) {
-        System.out.println("id=" + id);
-        dao.deleteById(id);
-        return "redirect:/member/list";
-    }
 }
