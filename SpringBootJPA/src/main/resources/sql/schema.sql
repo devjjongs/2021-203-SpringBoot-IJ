@@ -13,14 +13,14 @@ create TABLE phone
 
 
 create SEQUENCE "SPRING"."MEMBER2_SEQ"
-    MINVALUE 1
-    MAXVALUE 99999
-    INCREMENT By 1
-    START WITH 1;
-
-
+    minvalue 1
+    maxvalue 99999
+    increment by 1
+    start with 1
+;
 create SEQUENCE "SPRING"."PHONE_SEQ"
-    MINVALUE 1
-    MAXVALUE 99999
-    INCREMENT By 1
-    START WITH 1;
+    minvalue 1
+    maxvalue 99999
+    increment by 1
+    start with 1
+;

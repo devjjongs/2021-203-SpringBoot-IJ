@@ -10,7 +10,7 @@ spring:
     password: 1234
     data: classpath:sql/data.sql
     initialization-mode: always
-    initialize:true
+    initialize: true
 
   # JPA
 
@@ -27,10 +27,6 @@ spring:
       hibernate:
         format_sql: true
         use_sql_comments: true
-
-  sql:
-    init:
-
 
 logging:
   level:
