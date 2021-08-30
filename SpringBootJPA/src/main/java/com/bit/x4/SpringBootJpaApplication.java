@@ -2,6 +2,7 @@ package com.bit.x4;
 
 import com.bit.x4.model.dao.Member2Repository;
 import com.bit.x4.model.dao.PhoneRepository;
+import com.bit.x4.model.vo_dto_entity.Member2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -21,6 +22,10 @@ public class SpringBootJpaApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+        Member2 member2 = new Member2();
+        member2.setName("Park");
+        member2Repository.save(member2);
 
+        member2.addPhone(null);
     }
 }

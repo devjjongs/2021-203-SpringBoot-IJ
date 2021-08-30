@@ -8,7 +8,7 @@ create TABLE phone
 (
     seq      number primary key not null,
     memberId number,
-    phoneNo  varchar2(50).CONSTRAINT "SPTING"
+    phoneNo  varchar2(50).CONSTRAINT "SPRING"
 )
 
 

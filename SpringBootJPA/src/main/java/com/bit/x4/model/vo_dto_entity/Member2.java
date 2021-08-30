@@ -1,11 +1,8 @@
 package com.bit.x4.model.vo_dto_entity;
 
-
-import lombok.Data;
-
 import javax.persistence.*;
+import java.util.Collection;
 
-@Data
 @Entity
 public class Member2 {
     @Id
@@ -16,4 +13,45 @@ public class Member2 {
 
     @Column(name = "name")
     private String name;
+
+    public Collection<Phone> getPhones() {
+        return phones;
+    }
+
+    public void setPhones(Collection<Phone> phones) {
+        this.phones = phones;
+    }
+
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "memberId")
+    private Collection<Phone> phones;
+
+    public int getMemberId() {
+        return memberId;
+    }
+
+    public void setMemberId(int memberId) {
+        this.memberId = memberId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void addPhone(Phone phone) {
+        Phone.add(phone);
+    }
+
+    @Override
+    public String toString() {
+        return "Member2{" +
+                "memberId=" + memberId +
+                ", name='" + name + '\'' +
+                ", phones=" + phones +
+                '}';
+    }
 }
