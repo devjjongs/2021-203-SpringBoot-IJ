@@ -1,54 +1,59 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
+  <head>
     <meta charset="UTF-8">
     <title>Insert title here</title>
-</head>
-<body>
+  </head>
+  <body>
     <form action="/member/test1">
-        id:<input type="text" name="memberId"><br>
-        <input type="submit">
+    	id:<input type="text" name="memberId"><br>
+    	<input type="submit">
     </form>
     <pre>
     
     
     
     </pre>
-    <form action="/member/test2" id="myForm">
-        id:<input type="text" name="memberId"><br>
-        <input type="submit">
+    <form action="/member/test2" id="myForm" >
+    	id:<input type="text"   name="memberId"><br>
+    	<input  type="submit">
     </form>
-
-    <a href="/member/test2/1234">link</a>
-
-
-    <form action="/member/test2" id="test2">
-        id:<input type="text" id="memberId" name="memberId"><br>
-        <input type="button" onclick="btn_click();" value="제출">
-    </form>
-
-
-    <script>
-
+    
+    <a href="/member/test2/1234" >link</a>
+    
+    
+     <form action="/member/test2" id="test2">
+            id:<input type="text" id="memberId" name="memberId"><br>
+            <input type="button" onclick="btn_click();" value="제출">
+       </form>
+        
+        
+        <script>
+        	
         /* document.getElementById("myForm").addEventListener("submit",idInput);
         function idInput(){
         	this.action='/member/test2/'+ this.memberId.value;
         	//alert(this.memberId.value);
         } */
-
-        document.getElementById("myForm").addEventListener("submit", function () {
-            this.action = '/member/test2/' + this.memberId.value;
-            //alert(this.memberId.value);
-        });
-
-
-        function btn_click() {
-            //alert(document.getElementById("memberId").value);
-            document.getElementById("test2").action = '/member/test2/' + document.getElementById("memberId").value;
-        }
-
-    </script>
-
-
-</body>
+        
+        document.getElementById("myForm").addEventListener("submit", function (){
+        	this.action='/member/test2/'+ this.memberId.value;
+        	//alert(this.memberId.value);
+        } );
+       
+        
+        
+        
+        
+            function btn_click() {
+            	//alert(document.getElementById("memberId").value);
+                document.getElementById("test2").action='/member/test2/'+document.getElementById("memberId").value;    
+            }
+            
+        </script>
+    
+    
+    
+    
+  </body>
 </html>
