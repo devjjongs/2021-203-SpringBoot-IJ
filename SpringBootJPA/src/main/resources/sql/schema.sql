@@ -1,6 +1,6 @@
 CREATE TABLE member2
 (
-    memberId number primary key not null,
+    MEMBERID number primary key not null,
     name     varchar(50)
 );
 
@@ -26,4 +26,3 @@ CREATE SEQUENCE "SPRING"."PHONE_SEQ"
     INCREMENT BY 1
     START WITH 1
 ;
-    

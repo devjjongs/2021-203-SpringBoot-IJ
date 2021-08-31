@@ -22,7 +22,6 @@ public class Member2 {
     @SequenceGenerator(name = "MEMBER2_SEQ", sequenceName = "MEMBER2_SEQ", allocationSize = 1)
     private int memberId;
 
-
     @Column(name = "name")
     private String name;
 
@@ -34,40 +33,32 @@ public class Member2 {
         return memberId;
     }
 
-
     public void setMemberId(int memberId) {
         this.memberId = memberId;
     }
-
 
     public String getName() {
         return name;
     }
 
-
     public void setName(String name) {
         this.name = name;
     }
-
 
     public Collection<Phone> getPhones() {
         return phones;
     }
 
-
     public void setPhones(Collection<Phone> phones) {
         this.phones = phones;
     }
-
 
     public void addPhone(Phone phone) {
         phones.add(phone);
     }
 
-
     @Override
     public String toString() {
         return "Member2 [memberId=" + memberId + ", name=" + name + "]";
     }
-
 }
