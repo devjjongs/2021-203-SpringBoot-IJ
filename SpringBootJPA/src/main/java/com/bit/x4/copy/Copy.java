@@ -1,23 +1,23 @@
-package com.bit.x4.copy;
+package copy;
 
-public class Copy implements Cloneable {
-    String name;
+class Copy implements Cloneable {
 
-    Copy(String name) {
-        this.name = name;
-    }
+	String name;
 
-    public Object clone() {
-        Object obj = null;
-        try {
-            obj = super.clone();
-        } catch (CloneNotSupportedException e) {
-            System.out.println(e.getMessage());
+	Copy(String name) {
+		this.name = name;
+	}
 
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-        return obj;
-//        return super.clone();
-    }
+	public Object clone() {
+		Object obj = null;
+		try {
+			obj = super.clone();
+		}catch (CloneNotSupportedException e) {
+			System.out.println(e.getMessage());
+		
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return obj;
+	}
 }

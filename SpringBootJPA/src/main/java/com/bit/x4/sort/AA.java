@@ -1,4 +1,4 @@
-package com.bit.x4.sort;
+package test;
 
 import java.util.ArrayList;
 import java.util.Collections;
