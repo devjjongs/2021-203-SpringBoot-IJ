@@ -1,4 +1,4 @@
-package test;
+package com.bit.x4.sort;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -33,7 +33,7 @@ public class AA2 /* implements Comparable<AA2> */{
 		list.add(aa2);
 		list.add(aa3);
 		System.out.println(list);
-		Collections.sort(list);
+//		Collections.sort(list);
 		System.out.println(list);
 	}
 }

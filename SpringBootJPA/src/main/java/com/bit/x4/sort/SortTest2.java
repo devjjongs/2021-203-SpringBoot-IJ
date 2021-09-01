@@ -1,4 +1,4 @@
-package test;
+package com.bit.x4.sort;
 
 public class SortTest2 {
 	static public void bubbleSort(int[] x) {

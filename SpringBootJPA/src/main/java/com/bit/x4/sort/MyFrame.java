@@ -1,36 +1,21 @@
-package test;
+package com.bit.x4.sort;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JComboBox;
-import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.DefaultComboBoxModel;
 import java.awt.Color;
-import java.awt.SystemColor;
-import javax.swing.JFormattedTextField;
-import javax.swing.JList;
-import java.awt.Component;
-import javax.swing.Box;
 import java.awt.GridLayout;
 import javax.swing.JLabel;
-import javax.swing.BoxLayout;
-import java.awt.CardLayout;
-import java.awt.GridBagLayout;
 import javax.swing.JButton;
-import java.awt.GridBagConstraints;
-import java.awt.Insets;
 import java.awt.Font;
 import javax.swing.SwingConstants;
-import javax.swing.ImageIcon;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import java.awt.Choice;
-import java.awt.FlowLayout;
 import javax.swing.JToggleButton;
 import javax.swing.JCheckBox;
 import javax.swing.JPasswordField;

@@ -1,4 +1,4 @@
-package test;
+package com.bit.x4.sort;
 
 public class SortTest3 {
 	static public void selectionSort(int[] x) {
