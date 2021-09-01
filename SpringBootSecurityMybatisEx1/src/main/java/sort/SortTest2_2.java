@@ -1,4 +1,4 @@
-package sort;
+package test;
 
 public class SortTest2_2 {
 	static public void bubbleSort(int[] a) {
