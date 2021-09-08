@@ -107,16 +107,16 @@ public class MemberManagementController {
 		log.info("memberNewFormCall()");
 		return "/member/joinForm";
 	}
-	// 회원가이빌행 , 데이타베이스에 저장
+	// 회원가입 후 , 데이타베이스에 저장
 	@PostMapping("/memberNew")
 	public String memberNew(Member member) {
 		log.info(member.toString());
 //		암호에 대해서 암호화시킨다
 		member.setUserPw(passwordEncoder.encode(member.getUserPw()));
 		log.info("암호화된 암호 :"+ member.getUserPw());
-//        dao 의 insert 담당하는 메소드 호출
+//      dao 의 insert 담당하는 메소드 호출
 		memberDao.insertMember(member);
-//        결과를 받아서 
+//      결과를 받아서
 		log.info("memberNew()  return 전");
 		return "redirect:/login";
 	}

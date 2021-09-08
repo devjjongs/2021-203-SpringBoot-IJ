@@ -1,10 +1,8 @@
-package bit.unit;
+package com.bit.x3.unit;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
-
-import bit.unit.FourArithmeticOP;
 
 public class FourArithmeticOPTest {
     private FourArithmeticOP cal = new FourArithmeticOP();

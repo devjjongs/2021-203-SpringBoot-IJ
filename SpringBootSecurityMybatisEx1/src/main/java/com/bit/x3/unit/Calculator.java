@@ -1,4 +1,4 @@
-package bit.unit;
+package com.bit.x3.unit;
 
 public class Calculator {
 
